@@ -1,0 +1,126 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.animated-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    width: 388px;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    border-radius: 12px;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px;
+  gap: 8px;
+}
+
+.animated-button:not(.disable-hover):hover {
+    background: #F36EAE;
+    box-shadow: 
+    0 0 0 8px rgba(243, 110, 174, 0.24), 
+    inset 0 2px 1px rgba(255, 255, 255, 0.3),
+    inset 0 16px 24px rgba(255, 255, 255, 0.3), 
+    0 2px 4px rgba(243, 110, 174, 0.3);
+    transform: scale(1.05);
+}
+
+.animated-button.clicked-style {
+  background: #F36EAE;
+  box-shadow: 
+  inset 0 2px 1px rgba(255, 255, 255, 0.3),
+  inset 0 16px 24px rgba(255, 255, 255, 0.3), 
+  0 2px 4px rgba(243, 110, 174, 0.3);
+}
+
+
+.particle-canvas {
+  mix-blend-mode: screen;
+  position: absolute;
+}
+
+.animated-button:not(.disable-hover):hover .rect-animation rect {
+    opacity: 0;
+}
+
+#animated-icon {
+  width: 0;
+}
+
+.animated-button:not(.disable-hover):hover #animated-icon {
+  width: 18px;
+  transition: width 0.3s;
+}
+
+.clicked-style #animated-icon {
+  width: 18px;
+}
+
+.clicked-style svg rect {
+  stroke: #ffffff;
+}
+
+.clicked-style svg #effect feDropShadow {
+  flood-color: #ffffff;
+}
+
+.clicked-style .button-content {
+  font-size: 0;
+  transition: font-size 0.3s;
+}
+
+
+.rect-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+.rect-animation rect {
+    stroke-dasharray: 120 750;
+    stroke-dashoffset: 880;
+    animation: rect-anim 2s linear infinite;
+  }
+
+
+@keyframes rect-anim {
+    0% {
+      stroke-dashoffset: 880;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
