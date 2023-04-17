@@ -69,7 +69,7 @@ body {
 }
 
 .animated-button:not(.disable-hover):hover .rect-animation rect {
-    opacity: 0;
+  opacity: 0;
 }
 
 #animated-icon {
@@ -93,8 +93,8 @@ body {
   flood-color: #ffffff;
 }
 
-.clicked-style .button-content {
-  font-size: 0;
+.clicked-style .button-text {
+  font-size: 0px;
   transition: font-size 0.3s;
 }
 
