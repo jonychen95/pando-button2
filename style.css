@@ -94,8 +94,7 @@ body {
 }
 
 .clicked-style .button-text {
-  font-size: 0px;
-  transition: font-size 0.3s;
+  display: none;
 }
 
 
